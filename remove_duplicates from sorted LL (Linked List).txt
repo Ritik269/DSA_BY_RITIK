@@ -1,0 +1,28 @@
+struct node * remove_duplicates(struct node * head)
+{
+    if(head==NULL)
+    {
+
+        return NULL;
+    }
+    struct node * curr=head;
+    while((curr->next!=NULL)&&curr!=NULL)
+    {
+        if(curr->data==curr->next->data)
+        {
+            struct node * nodedelete=curr->next;
+            curr->next=curr->next->next;
+            delete(nodedelete);
+
+        }else
+        {
+            curr=curr->next;
+
+        }
+    }
+
+     return head;
+
+
+
+};

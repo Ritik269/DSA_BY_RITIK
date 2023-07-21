@@ -1,0 +1,47 @@
+bool issorted(int arr[],int n)
+{
+
+
+    if(n==0 || n==1 )
+    {
+        return true;
+    }
+    if(arr[0]>arr[1])
+    {
+        return false;
+    }
+    else
+    {
+
+        bool remainingpart=issorted(arr+1,n-1);
+        return remainingpart;
+
+    }
+
+}
+
+
+
+int main()
+{
+    int arr[]={56,78,98,100,105};
+    int n=5;
+    int i=0;
+    bool ans=issorted(arr,n);
+    if(ans)
+    {
+        cout<<"sorted"<<endl;
+
+    }else
+    {
+        cout<<"not sorted"<<endl;
+    }
+
+
+
+
+    return 0;
+
+
+
+}

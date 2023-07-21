@@ -1,0 +1,59 @@
+void mergeto(int arr[],int arr1[],int arr3[],int s,int s1,int s3)
+{
+    int i=0,j=0,k=0;
+    while(i<s && j<s1)
+    {
+        if(arr[i]<arr1[j])
+        {
+            arr3[k]=arr[i];
+            k++;
+            i++;
+        }else if(arr[i]>arr1[j])
+        {
+
+            arr3[k]=arr1[j];
+            k++;
+            j++;
+        }
+
+
+    }
+    while(i<s)
+    {
+        arr3[k]=arr[i];
+        i++;
+        k++;
+
+    }
+    while(j<s1)
+    {
+        arr3[k]=arr1[j];
+        j++;
+        k++;
+
+    }
+    for(k=0;k<s3;k++)
+    {
+        cout<<arr3[k]<<endl;
+    }
+
+
+
+}
+
+
+int main()
+{
+
+int arr[]={3,32,45,67};
+int s=sizeof(arr)/4;
+int arr1[]={1,22,38,59,70,95};
+int s1=sizeof(arr1)/4;
+int s3=s+s1;
+
+int arr3[s3];
+
+mergeto(arr,arr1,arr3,s,s1,s3);
+    return 0;
+
+

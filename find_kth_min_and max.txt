@@ -1,0 +1,40 @@
+void kth_min_max(int arr[],int size,int k)
+{
+    for(int i=0;i<size;i++)
+{
+    for(int j=i+1;j<=size;j++)
+    {
+        if(arr[i]>arr[j])
+        {
+            swap(arr[i],arr[j]);
+        }
+        
+        
+    }
+    
+}    
+    
+    cout<<k<<" " <<"min element is :"<<arr[k-1]<<endl;
+    cout<<k<<" " <<"max element is : "<<arr[size-1]<<endl;
+}
+int main()
+{
+    int size;
+    cout<<"enter the size of the array"<<endl;
+    cin>>size;
+    int arr[size];
+    for(int i=0;i<size;i++)
+    {
+        cin>>arr[i];
+        
+    }
+    int k;
+    cout<<"enter the value of k"<<endl;
+    cin>>k;
+    kth_min_max(arr,size,k);
+    
+    
+    
+
+    return 0;
+}

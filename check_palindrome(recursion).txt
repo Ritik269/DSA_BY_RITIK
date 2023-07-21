@@ -1,0 +1,62 @@
+void print(string &str,int s,int e)
+{
+
+    cout<<str[s]<<endl;
+    cout<<str[e]<<endl;
+    for(int i=s;i<=e;i++)
+    {
+        cout<<str[i];
+    }
+    cout<<endl;
+
+
+}
+bool checkpalindrome(string &str,int s,int e)
+{
+    print(str,s,e);
+    if(s>e)
+    {
+        return false;
+    }
+    if(str[s]!=str[e])
+    {
+        return false;
+
+    }
+    if(str[s]==str[e])
+    {
+        s++;
+        e--;
+        checkpalindrome(str,s,e);
+        return true;
+    }
+
+
+
+
+
+}
+
+
+
+int main()
+{
+    string str="KITIK";
+    int s=0;
+    int e=str.length()-1;
+    cout<<str<<endl;
+    bool ans=checkpalindrome(str,s,e);
+    if(ans)
+    {
+        cout<<"its a palindrome"<<endl;
+    }else
+    {
+        cout<<"its not a palindrome"<<endl;
+    }
+
+
+    return 0;
+
+
+
+}

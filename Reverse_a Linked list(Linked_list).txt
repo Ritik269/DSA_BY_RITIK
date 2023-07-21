@@ -1,0 +1,27 @@
+struct node * reversell(struct node * head)
+{
+    if(head==NULL)
+    {
+        return NULL;
+    }
+    struct node * prev=NULL;
+    struct node * curr=head;
+    struct node * forwad=NULL;
+    while(curr!=NULL)
+    {
+        forwad=curr->next;
+        curr->next=prev;
+        prev=curr;
+        curr=forwad;
+
+
+    }
+   return head;
+
+
+ 
+
+
+
+
+};

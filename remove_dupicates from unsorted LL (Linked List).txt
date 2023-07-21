@@ -1,0 +1,41 @@
+struct node * remove_duplicated_unsorted(struct node * head)
+{
+   if(head==NULL)
+   {
+       return NULL;
+   }
+   struct node * curr=head;
+
+   while(curr!=NULL && curr->next!=NULL)
+   {
+     struct node * curr_next=curr->next;
+       while(curr_next!=NULL)
+       {
+
+           if(curr->data==curr_next->data)
+           {
+               struct node * todelete=curr_next;
+               curr->next=curr_next->next;
+               delete(todelete);
+
+
+           }else
+           {
+
+               curr_next=curr_next->next;
+           };
+
+       }
+
+       curr=curr->next;
+   }
+
+
+
+
+
+  return head;
+
+
+
+};

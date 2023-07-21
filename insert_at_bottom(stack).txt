@@ -1,0 +1,17 @@
+void solve(stack<int>&s,int n,int value)
+{
+    if(s.empty())
+    {
+        s.push(value);
+        return;
+    }
+
+    int num=s.top();
+    s.pop();
+    solve(s,n,value);
+    s.push(num);
+
+
+
+
+}

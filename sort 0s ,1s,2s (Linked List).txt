@@ -1,0 +1,49 @@
+struct node * sortlist(struct node * head)
+{
+    int countzero=0;
+    int countone=0;
+    int counttwo=0;
+
+    struct node * temp=head;
+    while(temp!=NULL)
+    {
+        if(temp->data==0)
+        {
+            countzero++;
+        }else if(temp->data==1)
+        {
+            countone++;
+        }else if(temp->data==2)
+        {
+            counttwo++;
+        }
+        temp=temp->next;
+
+
+    }
+    temp=head;
+    while(temp!=NULL)
+    {
+        if(countzero!=0)
+        {
+            temp->data=0;
+            countzero--;
+        }
+        else if(countone!=0)
+        {
+            temp->data=1;
+            countone--;
+        }
+        else if(counttwo!=0)
+        {
+            temp->data=2;
+            counttwo--;
+        }
+
+        temp=temp->next;
+
+    }
+    return head;
+
+
+};

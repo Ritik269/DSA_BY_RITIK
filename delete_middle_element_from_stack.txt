@@ -1,0 +1,20 @@
+void solve(stack<int>&s,int counts,int size)
+{
+    if(counts==size/2)
+    {
+        s.pop();
+        return;
+    }
+    int num=s.top();
+    s.pop();
+
+    solve(s,counts++,size);
+    s.push(num);
+    
+
+
+
+
+
+
+}
